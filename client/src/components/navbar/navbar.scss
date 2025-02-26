@@ -1,0 +1,81 @@
+@import "../../style.scss";
+
+.navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 20px;
+    height: 50px;
+    position: sticky;
+    top: 0px;
+    border-bottom: 1px solid themed("border");
+    font-family: "Playwrite IN", serif;
+    background-color: themed("bg");
+    color: themed("textColor");
+    z-index: 999;
+    @include tablet {
+      width: 200px;
+      z-index: 999;
+      background-color: themed("bg");
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      span {
+        font-size: 20px;
+        font-weight: bold;
+        color: themed("logo");
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid themed("border");
+        padding: 5px;
+        border-radius: 5px;
+        width: 500px;
+        @include tablet {
+          width: 300px;
+          background-color: themed("bg");
+        }
+        input {
+          border: none;
+          background-color: transparent;
+          color: themed("textColor");
+          @include mobile {
+            width: 50px;
+            display: none;
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      @include mobile {
+        display: none;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        @include tablet {
+          display: none;
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        span {
+        }
+      }
+    }
+  }
+}

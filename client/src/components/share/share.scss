@@ -1,0 +1,100 @@
+@import "../../style.scss";
+.share {
+  @include themify($themes) {
+    -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+    border-radius: 20px;
+    font-family: "Iceberg", serif;
+    background-color: themed("bg");
+    color: themed("textColor");
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    gap: 30px;
+    width: 750px;
+    .userinput {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      .left {
+        display: flex;
+        align-items: center;
+        flex: 4;
+        gap: 10px;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: top center;
+        }
+
+        input {
+          font-family: "Iceberg", serif;
+          //   width: 400px;
+          border: none;
+          font-size: 15px;
+          outline: none;
+          padding: 20px 10px;
+          background-color: transparent;
+          width: 80%;
+          color: themed("textColor");
+          border-bottom: 2px solid themed("border");
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        .file {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 0px;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 720px;
+      padding: 0px 10px;
+      .additems {
+        display: flex;
+        gap: 20px;
+        .add {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          gap: 15px;
+          img {
+            height: 30px;
+            width: 30px;
+          }
+          span {
+            font-size: 14px;
+            color: themed("textColor");
+          }
+        }
+      }
+      button {
+        border: none;
+        background-color: blue;
+        color: white;
+        font-family: "Iceberg", serif;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../style.scss";
+.home{
+    @include themify($themes){
+        font-family: "Iceberg", serif;
+        background-color: themed("bgSoft");
+        color: themed("textColor");
+        padding:20px 70px;
+       
+        @include mobile {
+            padding: 10px;
+          }
+        h1{
+            margin: 0px;
+        }
+        @include tablet {
+           padding: 20px;
+          }
+    }
+}

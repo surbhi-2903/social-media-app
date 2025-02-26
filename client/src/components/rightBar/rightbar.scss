@@ -1,0 +1,96 @@
+@import "../../style.scss";
+
+.rightbar {
+  @include themify($themes) {
+    flex: 3;
+    font-family: "Iceberg", serif;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+    background-color: themed("bgSoft");
+    color: themed("textColor");
+    .container {
+      padding: 20px;
+      // display: flex;
+      // flex-direction: column;
+      // gap:20px;
+      .item {
+        background-color: themed("bg");
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        margin-bottom: 20px;
+        span {
+          font-size: 12px;
+          color: themed("textColorsoft");
+        }
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            img {
+              height: 40px;
+              width: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 0px;
+              left: 30px;
+            }
+            p {
+              font-size: 12px;
+              color: themed("textColorsoft");
+            }
+            span {
+              font-size: 14px;
+              color: themed("textColor");
+            }
+          }
+          .button {
+            display: flex;
+            gap: 10px;
+            .btn {
+              font-size: 12px;
+              font-family: "Iceberg", serif;
+              padding: 5px 10px;
+              border: none;
+              color: white;
+              cursor: pointer;
+            }
+            .follow {
+              background-color: rgb(29, 194, 249);
+            }
+            .dismiss {
+              background-color: rgb(237, 44, 44);
+            }
+          }
+        }
+      }
+    }
+  }
+}
